@@ -1,11 +1,14 @@
-import { useTheme } from '../context/ThemeContext';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../store';
+import { toggleTheme } from '../store/themeSlice';
 
 function ThemeSwitcher() {
-  const { theme, toggleTheme } = useTheme();
+  const theme = useSelector((state: RootState) => state.theme.value);
+  const dispatch = useDispatch();
   return (
-    <button className="theme-btn" onClick={toggleTheme}>
-      {theme === 'light' ? 'Oscuro' : 'Claro'}
-    </button>
+      <button className="theme-btn" onClick={() => dispatch(toggleTheme())}>
+        {theme === 'light' ? 'Oscuro' : 'Claro'}
+      </button>
   );
 }
 
