@@ -14,3 +14,9 @@ export interface WorkDetail {
   description?: string | { value: string };
   covers?: number[];
 }
+
+export interface Loan {
+  bookId: string;
+  title: string;
+  borrowedAt: string;
+}
