@@ -3,17 +3,17 @@ import { createSlice } from '@reduxjs/toolkit';
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    token: null as string | null,
-    user: null as { name: string; username: string } | null,
+    uid: null as string | null,
+    email: null as string | null,
   },
   reducers: {
     setAuth: (state, action) => {
-      state.token = action.payload.token;
-      state.user = action.payload.user;
+      state.uid = action.payload.uid;
+      state.email = action.payload.email;
     },
     logout: (state) => {
-      state.token = null;
-      state.user = null;
+      state.uid = null;
+      state.email = null;
     },
   },
 });
